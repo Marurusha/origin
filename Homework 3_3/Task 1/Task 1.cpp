@@ -1,10 +1,11 @@
 ﻿#include <iostream>
 
 class Calculator {
-public:
+private:
 	double num1;
 	double num2;
 
+public:
 	double add() {
 		return (num1 + num2);
 	}
