@@ -8,7 +8,7 @@ struct address {
     int index = 0;
 };
 
-void show_adress(address& add_for_show)
+void show_adress(address add_for_show)
 {
     std::cout << "Город: " << add_for_show.city << std::endl;
     std::cout << "Улица: " << add_for_show.street << std::endl;
