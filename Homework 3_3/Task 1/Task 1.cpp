@@ -78,13 +78,13 @@ int main()
 			break;
 		} while (true);
 
-		std::cout << calc.num1 << " + " << calc.num2 << " = " << calc.add() << std::endl;
-		std::cout << calc.num1 << " * " << calc.num2 << " = " << calc.multiply() << std::endl;
-		std::cout << calc.num1 << " - " << calc.num2 << " = " << calc.subtract_1_2() << std::endl;
-		std::cout << calc.num2 << " - " << calc.num1 << " = " << calc.subtract_2_1() << std::endl;
-		std::cout << calc.num1 << " / " << calc.num2 << " = " << calc.divide_1_2() << std::endl;
-		std::cout << calc.num2 << " / " << calc.num1 << " = " << calc.divide_2_1() << std::endl << std::endl;
+		std::cout << number1 << " + " << number2 << " = " << calc.add() << std::endl;
+		std::cout << number1 << " * " << number2 << " = " << calc.multiply() << std::endl;
+		std::cout << number1 << " - " << number2 << " = " << calc.subtract_1_2() << std::endl;
+		std::cout << number2 << " - " << number1 << " = " << calc.subtract_2_1() << std::endl;
+		std::cout << number1 << " / " << number2 << " = " << calc.divide_1_2() << std::endl;
+		std::cout << number2 << " / " << number1 << " = " << calc.divide_2_1() << std::endl << std::endl;
 	} while (true);
 
-	return(0);
+	return 0;
 }

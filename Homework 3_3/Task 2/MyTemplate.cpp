@@ -88,5 +88,5 @@ int main()
 	} while (true);
 
 	system("pause");
-	return(0);
+	return 0;
 }
