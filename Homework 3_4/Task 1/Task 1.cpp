@@ -10,6 +10,14 @@ private:
 	int flat;
 
 public:
+
+	Address() {
+		city = "not found";
+		street = "not found";
+		house = 0;
+		flat = 0;
+	}
+
 	Address(std::string city, std::string street, int house, int flat) {
 
 		this->city = city;
@@ -37,6 +45,7 @@ int main()
 			int count, userhouse, userflat;
 			std::string usercity, userstreet;
 			add_from_file >> count;
+			Address* address = new Address[count];
 			fill_file << count << std::endl;
 			for (int i = 0; i < count; i++) {
 				add_from_file >> usercity;
@@ -44,11 +53,14 @@ int main()
 				add_from_file >> userhouse;
 				add_from_file >> userflat;
 
-				Address address(usercity, userstreet, userhouse, userflat);
-				fill_file << address.fill_address() << std::endl;
+				address[i] = Address(usercity, userstreet, userhouse, userflat);
+				fill_file << address[i].fill_address() << std::endl;
 			}
+
 			add_from_file.close();
 			fill_file.close();
+			delete[] address;
+
 			std::cout << "Данные успешно записаны" << std::endl;
 			system("pause");
 		}
