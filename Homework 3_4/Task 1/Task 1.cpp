@@ -39,7 +39,7 @@ int main()
 
 		if ((!(add_from_file.is_open())) || (!(fill_file.is_open()))) {
 			std::cout << "Файл не найден. Проверьте файл и перезапустите программу" << std::endl;
-			system("pause");
+			return(3);
 		}
 		else {
 			int count, userhouse, userflat;
@@ -54,6 +54,8 @@ int main()
 				add_from_file >> userflat;
 
 				address[i] = Address(usercity, userstreet, userhouse, userflat);
+			}
+			for (int i = count - 1; i >= 0; i--) {
 				fill_file << address[i].fill_address() << std::endl;
 			}
 
