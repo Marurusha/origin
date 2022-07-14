@@ -30,13 +30,17 @@ public:
 		return city + ", " + street + ", " + std::to_string(house) + ", " + std::to_string(flat); 
 	}
 
+	std::string show_city() {
+		return city;
+	}
+
 };
 
 void sort(Address* address_for_sort, int count) {
 
 	for (int i = 0; i < count - 1; i++) {
 		for (int j = 0; j < count - 1; j++)
-			if (address_for_sort[j].fill_address() > address_for_sort[j + 1].fill_address()) {
+			if (address_for_sort[j].show_city() > address_for_sort[j + 1].show_city()) {
 				Address temp;
 				temp = address_for_sort[j];
 				address_for_sort[j] = address_for_sort[j + 1];
@@ -53,7 +57,7 @@ int main()
 
 	if ((!(add_from_file.is_open())) || (!(fill_file.is_open()))) {
 		std::cout << "Файл не найден. Проверьте файл и перезапустите программу" << std::endl;
-		return(3);
+		return 3;
 	}
 	else {
 		int count, userhouse, userflat;
