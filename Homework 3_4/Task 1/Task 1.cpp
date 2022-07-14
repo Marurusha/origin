@@ -39,7 +39,7 @@ int main()
 
 		if ((!(add_from_file.is_open())) || (!(fill_file.is_open()))) {
 			std::cout << "Файл не найден. Проверьте файл и перезапустите программу" << std::endl;
-			return(3);
+			return 3;
 		}
 		else {
 			int count, userhouse, userflat;

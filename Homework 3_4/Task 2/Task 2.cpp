@@ -29,13 +29,14 @@ public:
 	std::string fill_address() {
 		return city + ", " + street + ", " + std::to_string(house) + ", " + std::to_string(flat); 
 	}
+
 };
 
 void sort(Address* address_for_sort, int count) {
 
 	for (int i = 0; i < count - 1; i++) {
 		for (int j = 0; j < count - 1; j++)
-			if (static_cast<int>(address_for_sort[j].fill_address()[0]) > static_cast<int>(address_for_sort[j + 1].fill_address()[0])) {
+			if (address_for_sort[j].fill_address() > address_for_sort[j + 1].fill_address()) {
 				Address temp;
 				temp = address_for_sort[j];
 				address_for_sort[j] = address_for_sort[j + 1];
