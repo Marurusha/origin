@@ -18,12 +18,7 @@ protected:
 	}
 
 	virtual bool check() {
-		if (Number_of_sides == 0) {
-			return true;
-		}
-		else {
-			return false;
-		}
+			return Number_of_sides == 0;
 	}
 
 	int show_sides() {
@@ -85,12 +80,7 @@ protected:
 	}
 
 	virtual bool check() {
-		if ((show_sides() == 3) && ((A + B + C) == 180)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return show_sides() == 3 && A + B + C == 180;
 	}
 
 public:
@@ -112,15 +102,7 @@ private:
 	}
 
 	bool check() override {
-		if (!Triangle::check()) {
-			return false;
-		}
-		else if (show_C() == 90) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return Triangle::check() && show_C() == 90;
 	}
 public:
 	Right_triangle() : Right_triangle(rand() % 100, rand() % 100, rand() % 100, rand() % 180, rand() % 180) {
@@ -134,15 +116,7 @@ protected:
 	}
 
 	bool check() override {
-		if (!Triangle::check()) {
-			return false;
-		}
-		else if ((show_a() == show_c()) && (show_A() == show_C())) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return Triangle::check() && show_a() == show_c() && show_A() == show_C();
 	}
 
 public:
@@ -157,15 +131,7 @@ private:
 	}
 
 	bool check() override {
-		if (!Triangle::check()) {
-			return false;
-		}
-		else if ((show_a() == show_b()) && (show_A() == show_B() == 60)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return Isosceles::check() && show_a() == show_b() && show_A() == show_B() && show_A() == 60;
 	}
 
 public:
@@ -222,12 +188,7 @@ protected:
 	}
 
 	virtual bool check() {
-		if ((show_sides() == 4) && ((A + B + C + D) == 360)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return show_sides() == 4 && A + B + C + D == 360;
 	}
 
 public:
@@ -248,15 +209,7 @@ protected:
 		fill_name("Параллелограмм");
 	}
 	bool check() override {
-		if (!Quadrangle::check()) {
-			return false;
-		}
-		else if ((show_a() == show_c()) && (show_b() == show_d()) && (show_A() == show_C()) && (show_B() == show_D())) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return Quadrangle::check() && show_a() == show_c() && show_b() == show_d() && show_A() == show_C() && show_B() == show_D();
 	}
 
 public:
@@ -270,15 +223,7 @@ private:
 		fill_name("Ромб");
 	}
 	bool check() override {
-		if (!Quadrangle::check()) {
-			return false;
-		}
-		else if ((show_a() == show_b())) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return Parallelogram::check() && show_a() == show_b();
 	}
 
 public:
@@ -293,15 +238,7 @@ protected:
 	}
 
 	bool check() override {
-		if (!Quadrangle::check()) {
-			return false;
-		}
-		else if ((show_A() == show_B() == 90)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return Parallelogram::check() && show_A() == show_B() && show_A() == 90;
 	}
 
 public:
@@ -316,15 +253,7 @@ private:
 	}
 
 	bool check() override {
-		if (!Quadrangle::check()) {
-			return false;
-		}
-		else if ((show_a() == show_b())) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return Rectangle::check() && show_a() == show_b();
 	}
 
 public:
