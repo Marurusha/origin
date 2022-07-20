@@ -24,29 +24,10 @@ public:
 		return Figure;
 	}
 
-	virtual int show_a() {
-		return 0;
+	virtual void print_sides() {
 	}
-	virtual int show_b() {
-		return 0;
-	}
-	virtual int show_c() {
-		return 0;
-	}
-	virtual int show_d() {
-		return 0;
-	}
-	virtual int show_A() {
-		return 0;
-	}
-	virtual int show_B() {
-		return 0;
-	}
-	virtual int show_C() {
-		return 0;
-	}
-	virtual int show_D() {
-		return 0;
+
+	virtual void print_angles() {
 	}
 };
 
@@ -74,24 +55,33 @@ public:
 	Triangle() : Triangle(rand() % 100, rand() % 100, rand() % 100, rand() % 180, rand() % 180, rand() % 180) {
 	}
 
-	int show_a() override {
+	int show_a() {
 		return a;
 	}
-	int show_b() override {
+	int show_b() {
 		return b;
 	}
-	int show_c() override {
+	int show_c() {
 		return c;
 	}
-	int show_A() override {
+	int show_A() {
 		return A;
 	}
-	int show_B() override {
+	int show_B() {
 		return B;
 	}
-	int show_C() override {
+	int show_C() {
 		return C;
 	}
+
+	void print_sides() override {
+		std::cout << "a = " << a << ", b = " << b << ", c = " << c << std::endl;
+	}
+
+	void print_angles() override {
+		std::cout << "A = " << A << ", B = " << B << ", C = " << C << std::endl;
+	}
+
 };
 
 class Right_triangle : public Triangle {
@@ -161,29 +151,37 @@ public:
 	Quadrangle() : Quadrangle(rand() % 100, rand() % 100, rand() % 100, rand() % 100, rand() % 180, rand() % 180, rand() % 180, rand() % 180) {
 	}
 
-	int show_a() override {
+	int show_a() {
 		return a;
 	}
-	int show_b() override {
+	int show_b() {
 		return b;
 	}
-	int show_c() override {
+	int show_c() {
 		return c;
 	}
-	int show_d() override {
+	int show_d() {
 		return d;
 	}
-	int show_A() override {
+	int show_A() {
 		return A;
 	}
-	int show_B() override {
+	int show_B() {
 		return B;
 	}
-	int show_C() override {
+	int show_C() {
 		return C;
 	}
-	int show_D() override {
+	int show_D() {
 		return D;
+	}
+
+	void print_sides() override {
+		std::cout << "a = " << a << ", b = " << b << ", c = " << c << ", d = " << d << std::endl;
+	}
+
+	void print_angles() override {
+		std::cout << "A = " << A << ", B = " << B << ", C = " << C << ", D = " << D << std::endl;
 	}
 
 };
@@ -242,21 +240,12 @@ public:
 
 void print_info(Figures* demo_figure) {
 
-	if ((*demo_figure).show_sides() == 3) {
 		std::cout << (*demo_figure).show_name() << ":" << std::endl;
-		std::cout << "Стороны: " << "a = " << (*demo_figure).show_a() << ", b = " << (*demo_figure).show_b() << ", c = " << (*demo_figure).show_c() << std::endl;
-		std::cout << "Углы: " << "А = " << (*demo_figure).show_A() << ", B = " << (*demo_figure).show_B() << ", C = " << (*demo_figure).show_C() << std::endl << std::endl;
-	}
-
-	else if ((*demo_figure).show_sides() == 4) {
-		std::cout << (*demo_figure).show_name() << ":" << std::endl;
-		std::cout << "Стороны: " << "a = " << (*demo_figure).show_a() << ", b = " << (*demo_figure).show_b() << ", c = " << (*demo_figure).show_c() << ", d = " << (*demo_figure).show_d() << std::endl;
-		std::cout << "Углы: " << "А = " << (*demo_figure).show_A() << ", B = " << (*demo_figure).show_B() << ", C = " << (*demo_figure).show_C() << ", D = " << (*demo_figure).show_D() << std::endl << std::endl;
-	}
-
-	else {
-		std::cout << "Фигура не найдена" << std::endl;
-	}
+		std::cout << "Стороны: ";
+		(*demo_figure).print_sides();
+		std::cout << "Углы: ";
+		(*demo_figure).print_angles();
+		std::cout << std::endl;
 }
 
 int main()
