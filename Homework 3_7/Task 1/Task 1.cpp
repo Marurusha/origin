@@ -13,11 +13,8 @@ int add(int num1, int num2) {
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	if (MODE == 0) {
-		std::cout << "Работаю в режиме тренировки" << std::endl;
-	}
-#if MODE 1
-	else if (MODE == 1) {
+
+#if MODE == 1
 		std::cout << "Работаю в боевом режиме" << std::endl;
 		int a, b;
 		std::cout << "Введите первое число: ";
@@ -25,12 +22,12 @@ int main()
 		std::cout << "Введите второе число: ";
 		std::cin >> b;
 		std::cout << "Результат сложения: " << add(a, b) << std::endl;
-	}
-#endif
-	else {
+#elif MODE == 0
+	std::cout << "Работаю в режиме тренировки" << std::endl;
+#else
 		std::cout << "Неизвестный режим. Завершение работы" << std::endl;
 		return 1;
-	}
+#endif
 	system("pause");
 	return 0;
 }
