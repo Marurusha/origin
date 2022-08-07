@@ -4,7 +4,7 @@
 #endif
 #include<iostream>
 
-#if MODE 1
+#if MODE == 1
 int add(int num1, int num2) {
 	return num1 + num2;
 }
