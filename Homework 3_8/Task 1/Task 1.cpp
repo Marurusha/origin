@@ -41,7 +41,7 @@ int main()
 			std::cout << "Длина слова '" << word << "' равна " << length << std::endl;
 		} while (true);
 	}
-	catch (bad_length& stop_programm) {
+	catch (const bad_length& stop_programm) {
 		std::cout << stop_programm.what() << std::endl << "До свидания" << std::endl;
 		system("pause");
 		return 1;
