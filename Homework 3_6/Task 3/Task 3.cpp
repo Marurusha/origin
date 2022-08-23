@@ -10,21 +10,17 @@
 #include "Rhombus.h"
 #include "Rectangle.h"
 #include "Square.h"
-
-void print_info(Figures* demo_figure) {
-
-	std::cout << (*demo_figure).show_name() << ":" << std::endl;
-	std::cout << "Стороны: ";
-	(*demo_figure).print_sides();
-	std::cout << "Углы: ";
-	(*demo_figure).print_angles();
-	std::cout << std::endl;
-}
+#include "wrong_figure.h"
+#include "print_info.h"
 
 int main()
 {
 	setlocale(LC_ALL, "rus");
 	srand(time(NULL));
+
+	try {
+	Figures figure;
+	print_info(&figure);
 
 	Triangle triangle;
 	print_info(&triangle);
@@ -50,8 +46,15 @@ int main()
 	Parallelogram parallelogram;
 	print_info(&parallelogram);
 
-	Rhombus rhombus;
+	Rhombus rhombus;	
 	print_info(&rhombus);
+
+	}
+	catch (const wrong_figure& stop_programm) {
+		std::cout << stop_programm.what() << std::endl;
+		system("pause");
+		return 1;
+	}
 
 	system("pause");
 	return 0;

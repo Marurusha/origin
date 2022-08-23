@@ -17,7 +17,9 @@ std::string Figures::show_name() {
 }
 
 void Figures::print_sides() {
+	std::cout << "0" << std::endl;
 }
 
 void Figures::print_angles() {
+	std::cout << "0" << std::endl;
 }
