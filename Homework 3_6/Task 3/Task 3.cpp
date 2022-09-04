@@ -52,10 +52,8 @@ int main()
 	}
 	catch (const wrong_figure& stop_programm) {
 		std::cout << stop_programm.what() << std::endl;
-		system("pause");
 		return 1;
 	}
 
-	system("pause");
 	return 0;
 }
