@@ -11,6 +11,3 @@ Square::Square(int side1, int side2, int side3, int side4, int angle1, int angle
 		throw wrong_figure(message);
 	}
 }
-
-Square::Square() : Square::Square(10, 10, 10, 10, 90, 90, 90, 90, " вадрат") {
-}

@@ -12,11 +12,10 @@ private:
 	int B;
 	int C;
 
-protected:
+public:
 	Triangle(int side1, int side2, int side3, int angle1, int angle2, int angle3, std::string name);
 
 public:
-	Triangle();
 
 	void print_sides() override;
 

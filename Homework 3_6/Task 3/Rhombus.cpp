@@ -11,6 +11,3 @@ Rhombus::Rhombus(int side1, int side2, int side3, int side4, int angle1, int ang
 		throw wrong_figure(message);
 	}
 }
-
-Rhombus::Rhombus() : Rhombus::Rhombus(5, 5, 5, 5, 40, 140, 40, 140, "Ромб") {
-}

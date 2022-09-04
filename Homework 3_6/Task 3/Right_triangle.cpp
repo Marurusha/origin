@@ -12,6 +12,3 @@ Right_triangle::Right_triangle(int side1, int side2, int side3, int angle1, int 
 		throw wrong_figure(message);
 	}
 }
-
-Right_triangle::Right_triangle() : Right_triangle::Right_triangle(rand() % 100, rand() % 100, rand() % 100, 40, 50, 90, "Прямоугольный треугольник") {
-}

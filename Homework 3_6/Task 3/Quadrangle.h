@@ -14,11 +14,10 @@ private:
 	int C;
 	int D;
 
-protected:
+public:
 	Quadrangle(int side1, int side2, int side3, int side4, int angle1, int angle2, int angle3, int angle4, std::string name);
 
 public:
-	Quadrangle();
 
 	void print_sides() override;
 

@@ -20,6 +20,3 @@ Parallelogram::Parallelogram(int side1, int side2, int side3, int side4, int ang
 		throw wrong_figure(message);
 	}
 }
-
-Parallelogram::Parallelogram() : Parallelogram::Parallelogram(5, 5, 5, 5, 40, 140, 40, 140, "ֿאנאככוכמדנאלל") {
-}

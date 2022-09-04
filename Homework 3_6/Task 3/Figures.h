@@ -6,11 +6,10 @@ private:
 	int Number_of_sides;
 	std::string Figure;
 
-protected:
+public:
 	Figures(int sides, std::string name);
 
 public:
-	Figures();
 	int show_sides();
 	std::string show_name();
 	virtual void print_sides();

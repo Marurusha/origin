@@ -31,9 +31,6 @@ Quadrangle::Quadrangle(int side1, int side2, int side3, int side4, int angle1, i
 	D = angle4;
 }
 
-Quadrangle::Quadrangle() : Quadrangle::Quadrangle(rand() % 100, rand() % 100, rand() % 100, rand() % 100, 30, 30, 150, 150, "Четырёхугольник") {
-}
-
 void Quadrangle::print_sides() {
 	std::cout << a << ", " << b << ", " << c << ", " << d << std::endl;
 }

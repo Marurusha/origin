@@ -21,6 +21,3 @@ Isosceles::Isosceles(int side1, int side2, int side3, int angle1, int angle2, in
 	}
 
 }
-
-Isosceles::Isosceles() : Isosceles::Isosceles(100, 20, 100, 40, 100, 40, "Равнобедренный треугольник") {
-}

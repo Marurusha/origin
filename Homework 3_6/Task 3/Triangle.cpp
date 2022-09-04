@@ -31,9 +31,6 @@ Triangle::Triangle(int side1, int side2, int side3, int angle1, int angle2, int 
 
 }
 
-Triangle::Triangle() : Triangle::Triangle(rand() % 100, rand() % 100, rand() % 100, 50, 30, 100, "Треугольник") {
-}
-
 void Triangle::print_sides() {
 	std::cout << a << ", " << b << ", " << c << std::endl;
 }

@@ -2,11 +2,15 @@
 #include "wrong_figure.h"
 
 Figures::Figures(int sides, std::string name) {
+	if ((name == "Фигура") && (!(sides == 0))) {
+		std::string message;
+		message += std::string("Ошибка при создании фигуры: ") + name;
+		message += std::string("\nПричина: количество сторон больше нуля. Программа будет завершена.");
+		throw wrong_figure(message);
+
+	}
 	Number_of_sides = sides;
 	Figure = name;
-}
-
-Figures::Figures() : Figures::Figures(0, "Фигура") {
 }
 
 int Figures::show_sides() {

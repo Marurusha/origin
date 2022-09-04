@@ -20,6 +20,3 @@ Equilateral::Equilateral(int side1, int side2, int side3, int angle1, int angle2
 		throw wrong_figure(message);
 	}
 }
-
-Equilateral::Equilateral() : Equilateral::Equilateral(100, 100, 100, 60, 60, 60, "Равносторонний треугольник") {
-}

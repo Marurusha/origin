@@ -12,6 +12,3 @@ Rectangle::Rectangle(int side1, int side2, int side3, int side4, int angle1, int
 		throw wrong_figure(message);
 	}
 }
-
-Rectangle::Rectangle() : Rectangle::Rectangle(60, 30, 60, 30, 90, 90, 90, 90, "Прямоугольник") {
-}
