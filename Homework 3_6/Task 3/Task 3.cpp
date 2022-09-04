@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <ctime>
 #include "Figures.h"
 #include "Triangle.h"
 #include "Right_triangle.h"
@@ -16,7 +15,6 @@
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	srand(time(NULL));
 
 	int userchoiсe;
 	int a, b, c, d, A, B, C, D;
@@ -125,10 +123,8 @@ int main()
 	}
 	catch (const wrong_figure& stop_programm) {
 		std::cout << stop_programm.what() << std::endl;
-		system("pause");
 		return 1;
 	}
 
-	system("pause");
 	return 0;
 }
