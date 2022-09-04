@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Figures.h"
+#include <string>
 
 class Triangle : public Figures {
 private:
@@ -11,20 +12,11 @@ private:
 	int B;
 	int C;
 
-
 protected:
-	Triangle(int side1, int side2, int side3, int angle1, int angle2, int angle3);
-	std::string name_triangle;
+	Triangle(int side1, int side2, int side3, int angle1, int angle2, int angle3, std::string name);
 
 public:
 	Triangle();
-
-	int show_a();
-	int show_b();
-	int show_c();
-	int show_A();
-	int show_B();
-	int show_C();
 
 	void print_sides() override;
 

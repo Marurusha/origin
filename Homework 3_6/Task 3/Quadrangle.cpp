@@ -1,6 +1,26 @@
 #include "Quadrangle.h"
+#include "wrong_figure.h"
 
-Quadrangle::Quadrangle(int side1, int side2, int side3, int side4, int angle1, int angle2, int angle3, int angle4) : Figures(4, "Четырёхугольник") {
+Quadrangle::Quadrangle(int side1, int side2, int side3, int side4, int angle1, int angle2, int angle3, int angle4, std::string name) : Figures(4, name) {
+
+	if ((side1 == 0) || (side2 == 0) || (side3 == 0) || (side4 == 0)) {
+		std::string message;
+		message += std::string("Ошибка при создании фигуры: ") + show_name();
+		message += std::string("\nСтороны: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3) + ", " + std::to_string(side4);
+		message += std::string("\nУглы: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3) + ", " + std::to_string(angle4);
+		message += std::string("\nПричина: количество сторон менее четырёх. Программа будет завершена.");
+		throw wrong_figure(message);
+	}
+
+	if (!(angle1 + angle2 + angle3 + angle4 == 360)) {
+		std::string message;
+		message = std::string("Ошибка при создании фигуры: ") + show_name();
+		message += std::string("\nСтороны: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3) + ", " + std::to_string(side4);
+		message += std::string("\nУглы: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3) + ", " + std::to_string(angle4);
+		message += std::string("\nПричина: сумма углов не равна 360. Программа будет завершена.");
+		throw wrong_figure(message);
+	}
+
 	a = side1;
 	b = side2;
 	c = side3;
@@ -11,38 +31,13 @@ Quadrangle::Quadrangle(int side1, int side2, int side3, int side4, int angle1, i
 	D = angle4;
 }
 
-Quadrangle::Quadrangle() : Quadrangle::Quadrangle(rand() % 100, rand() % 100, rand() % 100, rand() % 100, rand() % 180, rand() % 180, rand() % 180, rand() % 180) {
-}
-
-int Quadrangle::show_a() {
-	return a;
-}
-int Quadrangle::show_b() {
-	return b;
-}
-int Quadrangle::show_c() {
-	return c;
-}
-int Quadrangle::show_d() {
-	return d;
-}
-int Quadrangle::show_A() {
-	return A;
-}
-int Quadrangle::show_B() {
-	return B;
-}
-int Quadrangle::show_C() {
-	return C;
-}
-int Quadrangle::show_D() {
-	return D;
+Quadrangle::Quadrangle() : Quadrangle::Quadrangle(rand() % 100, rand() % 100, rand() % 100, rand() % 100, 30, 30, 150, 150, "Четырёхугольник") {
 }
 
 void Quadrangle::print_sides() {
-	std::cout << "a = " << a << ", b = " << b << ", c = " << c << ", d = " << d << std::endl;
+	std::cout << a << ", " << b << ", " << c << ", " << d << std::endl;
 }
 
 void Quadrangle::print_angles() {
-	std::cout << "A = " << A << ", B = " << B << ", C = " << C << ", D = " << D << std::endl;
+	std::cout << A << ", " << B << ", " << C << ", " << D << std::endl;
 }

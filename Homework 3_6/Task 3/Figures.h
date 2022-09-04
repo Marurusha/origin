@@ -12,7 +12,7 @@ protected:
 public:
 	Figures();
 	int show_sides();
-	virtual std::string show_name();
+	std::string show_name();
 	virtual void print_sides();
 	virtual void print_angles();
 };

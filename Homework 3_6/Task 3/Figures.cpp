@@ -1,4 +1,5 @@
 #include "Figures.h"
+#include "wrong_figure.h"
 
 Figures::Figures(int sides, std::string name) {
 	Number_of_sides = sides;
