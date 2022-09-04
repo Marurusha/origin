@@ -1,22 +1,27 @@
 ﻿#include <iostream>
 #include <string>
+#include <Windows.h>
 
 class bad_length : public std::runtime_error {
 public:
-	bad_length(const char* msg) : runtime_error(msg) {
+	bad_length(std::string msg) : runtime_error(msg) {
 	}
 };
 
 int function(std::string str, int forbidden_length) {
 	if (str.length() == forbidden_length) {
-		throw bad_length("Введено слово запрещенной длины!");
+		std::string message;
+		message = "Слово '" + str + "' запрещенной длины " + std::to_string(forbidden_length) + ". До свидания!";
+		throw bad_length(message);
 	}
 	return str.length();
 }
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
 	int stop, length;
 	std::string word;
 	try {
@@ -30,9 +35,12 @@ int main()
 		} while (true);
 	}
 	catch (const bad_length& stop_programm) {
-		std::cout << stop_programm.what() << " (слово '" << word << "', длина " << word.length() << "). " << std::endl << "До свидания." << std::endl;
+		std::cout << stop_programm.what() << std::endl;
+		system("pause");
 		return 1;
 	}
+
+	system("pause");
 
 	return 0;
 }
