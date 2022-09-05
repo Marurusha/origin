@@ -38,10 +38,9 @@ public:
 		return result;
 	}
 
-	Fraction operator ++ () {
-		Fraction temp = *this;
-		temp.numerator_ = temp.numerator_ + temp.denominator_;
-		return temp;
+	Fraction& operator ++ () {
+		numerator_ += denominator_;
+		return *this;
 	}
 
 	Fraction operator ++ (int) {
@@ -50,10 +49,9 @@ public:
 		return temp;
 	}
 
-	Fraction operator -- () {
-		Fraction temp = *this;
-		temp.numerator_ = temp.numerator_ - temp.denominator_;
-		return temp;
+	Fraction& operator -- () {
+		numerator_ -= denominator_;
+		return *this;
 	}
 
 	Fraction operator -- (int) {
@@ -63,10 +61,10 @@ public:
 	}
 
 	void Evklid() {
-		int num1 = abs(numerator_); 
+		int num1 = abs(numerator_);
 		int num2 = abs(denominator_);
 
-		while ((num1>0) && (num2>0)) {
+		while ((num1 > 0) && (num2 > 0)) {
 			if (num1 > num2) {
 				num1 = num1 - num2;
 			}
@@ -92,7 +90,7 @@ public:
 	}
 };
 
-void cast_for_fract(int &num, int &denom) {
+void cast_for_fract(int& num, int& denom) {
 	if ((num < 0) && (denom < 0)) {
 		num = abs(num);
 		denom = abs(denom);
@@ -111,14 +109,14 @@ int main()
 	std::cout << "Введите числитель первой дроби: ";
 	std::cin >> num1;
 	do {
-	std::cout << "Введите знаменатель первой дроби: ";
-	std::cin >> denom1;
-	if (denom1 != 0) {
-		break;
-	}
-	else {
-		std::cout << "Знаменатель не может равняться 0! ";
-	}
+		std::cout << "Введите знаменатель первой дроби: ";
+		std::cin >> denom1;
+		if (denom1 != 0) {
+			break;
+		}
+		else {
+			std::cout << "Знаменатель не может равняться 0! ";
+		}
 	} while (true);
 
 	std::cout << "Введите числитель второй дроби: ";
@@ -139,23 +137,45 @@ int main()
 
 	Fraction f1(num1, denom1);
 	Fraction f2(num2, denom2);
+	Fraction tempf1 = f1;
+
 	Fraction sum = f1 + f2;
 	Fraction sub = f1 - f2;
 	Fraction mult = f1 * f2;
 	Fraction divis = f1 / f2;
-	Fraction mult_preink = ++f1 * f2;
-	Fraction mult_postink = f1++ * f2;
-	Fraction mult_predek = --f1 * f2;
-	Fraction mult_postdek = f1-- * f2;
 
 	std::cout << f1.get_num() << "/" << f1.get_denom() << " + " << f2.get_num() << "/" << f2.get_denom() << " = " << sum.get_num() << "/" << sub.get_denom() << std::endl;
 	std::cout << f1.get_num() << "/" << f1.get_denom() << " - " << f2.get_num() << "/" << f2.get_denom() << " = " << sub.get_num() << "/" << sub.get_denom() << std::endl;
 	std::cout << f1.get_num() << "/" << f1.get_denom() << " * " << f2.get_num() << "/" << f2.get_denom() << " = " << mult.get_num() << "/" << mult.get_denom() << std::endl;
-	std::cout << f1.get_num() << "/" << f1.get_denom() << " / " << f2.get_num() << "/" << f2.get_denom() << " = " << divis.get_num() << "/" << divis.get_denom() << std::endl;
-	std::cout << "++" << f1.get_num() << "/" << f1.get_denom() << " * " << f2.get_num() << "/" << f2.get_denom() << " = " << mult_preink.get_num() << "/" << mult_preink.get_denom() << std::endl;
-	std::cout << f1.get_num() << "/" << f1.get_denom() << "++" << " * " << f2.get_num() << "/" << f2.get_denom() << " = " << mult_postink.get_num() << "/" << mult_postink.get_denom() << std::endl;
-	std::cout << "--" << f1.get_num() << "/" << f1.get_denom() << " * " << f2.get_num() << "/" << f2.get_denom() << " = " << mult_predek.get_num() << "/" << mult_predek.get_denom() << std::endl;
-	std::cout << f1.get_num() << "/" << f1.get_denom() << "--" << " * " << f2.get_num() << "/" << f2.get_denom() << " = " << mult_postdek.get_num() << "/" << mult_postdek.get_denom() << std::endl;
+	std::cout << f1.get_num() << "/" << f1.get_denom() << " / " << f2.get_num() << "/" << f2.get_denom() << " = " << divis.get_num() << "/" << divis.get_denom() << std::endl << std::endl;
+
+	Fraction preink = ++f1;
+	Fraction mult_preink = preink * f2;
+	std::cout << "++" << tempf1.get_num() << "/" << tempf1.get_denom() << " * " << f2.get_num() << "/" << f2.get_denom() << " = " << mult_preink.get_num() << "/" << mult_preink.get_denom() << std::endl;
+	std::cout << "Значение первой дроби: " << f1.get_num() << "/" << f1.get_denom() << std::endl;
+	std::cout << "Значение первой дроби c префиксом ++: " << preink.get_num() << "/" << preink.get_denom() << std::endl << std::endl;
+	f1 = tempf1;
+
+	Fraction postink = f1++;
+	Fraction mult_postink = postink * f2;
+	std::cout << tempf1.get_num() << "/" << tempf1.get_denom() << "++" << " * " << f2.get_num() << "/" << f2.get_denom() << " = " << mult_postink.get_num() << "/" << mult_postink.get_denom() << std::endl;
+	std::cout << "Значение первой дроби: " << f1.get_num() << "/" << f1.get_denom() << std::endl;
+	std::cout << "Значение первой дроби c постфиксом ++: " << postink.get_num() << "/" << postink.get_denom() << std::endl << std::endl;
+	f1 = tempf1;
+
+	Fraction predek = --f1;
+	Fraction mult_predek = predek * f2;
+	std::cout << "--" << tempf1.get_num() << "/" << tempf1.get_denom() << " * " << f2.get_num() << "/" << f2.get_denom() << " = " << mult_predek.get_num() << "/" << mult_predek.get_denom() << std::endl;
+	std::cout << "Значение первой дроби: " << f1.get_num() << "/" << f1.get_denom() << std::endl;
+	std::cout << "Значение первой дроби c префиксом --: " << predek.get_num() << "/" << predek.get_denom() << std::endl << std::endl;
+	f1 = tempf1;
+
+	Fraction postdek = f1--;
+	Fraction mult_postdek = postdek * f2;
+	std::cout << tempf1.get_num() << "/" << tempf1.get_denom() << "--" << " * " << f2.get_num() << "/" << f2.get_denom() << " = " << mult_postdek.get_num() << "/" << mult_postdek.get_denom() << std::endl;
+	std::cout << "Значение первой дроби: " << f1.get_num() << "/" << f1.get_denom() << std::endl;
+	std::cout << "Значение первой дроби c постфиксом --: " << postdek.get_num() << "/" << postdek.get_denom() << std::endl << std::endl;
+	f1 = tempf1;
 
 	system("pause");
 	return 0;
