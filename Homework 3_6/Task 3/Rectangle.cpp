@@ -1,7 +1,7 @@
 #include "Rectangle.h"
 #include "wrong_figure.h"
 
-Rectangle::Rectangle(int side1, int side2, int side3, int side4, int angle1, int angle2, int angle3, int angle4, std::string name) : Parallelogram(side1, side2, side3, side4, angle1, angle2, angle3, angle4, name) {
+MyRectangle::MyRectangle(int side1, int side2, int side3, int side4, int angle1, int angle2, int angle3, int angle4, std::string name) : Parallelogram(side1, side2, side3, side4, angle1, angle2, angle3, angle4, name) {
 
 	if (!((angle1==90) && (angle1 == angle2))) {
 		std::string message;
@@ -13,5 +13,5 @@ Rectangle::Rectangle(int side1, int side2, int side3, int side4, int angle1, int
 	}
 }
 
-Rectangle::Rectangle() : Rectangle::Rectangle(60, 30, 60, 30, 90, 90, 90, 90, "Прямоугольник") {
+MyRectangle::MyRectangle() : MyRectangle::MyRectangle(60, 30, 60, 30, 90, 90, 90, 90, "Прямоугольник") {
 }

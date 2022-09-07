@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <ctime>
+#include <Windows.h>
 #include "Figures.h"
 #include "Triangle.h"
 #include "Right_triangle.h"
@@ -15,7 +16,8 @@
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	srand(time(NULL));
 
 	try {
@@ -37,7 +39,7 @@ int main()
 	Quadrangle quadrangle;
 	print_info(&quadrangle);
 
-	Rectangle rectangle;
+	MyRectangle rectangle;
 	print_info(&rectangle);
 
 	Square square;
@@ -54,6 +56,5 @@ int main()
 		std::cout << stop_programm.what() << std::endl;
 		return 1;
 	}
-
 	return 0;
 }
