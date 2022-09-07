@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <Windows.h>
 #include "Triangle.h"
 
 class Right_triangle : public Triangle {

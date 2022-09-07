@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <Windows.h>
 #include "Isosceles.h"
 
 class Equilateral : public Isosceles {

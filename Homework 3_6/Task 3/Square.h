@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <Windows.h>
 #include "Rectangle.h"
 
 class Square : public MyRectangle {
