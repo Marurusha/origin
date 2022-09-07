@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <ctime>
+#include <clocale>
 #include <Windows.h>
 #include "Figures.h"
 #include "Triangle.h"
@@ -14,8 +15,10 @@
 #include "wrong_figure.h"
 #include "print_info.h"
 
+
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));

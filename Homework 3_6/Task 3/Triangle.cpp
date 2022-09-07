@@ -1,4 +1,4 @@
-#include "Triangle.h"
+п»ї#include "Triangle.h"
 #include "wrong_figure.h"
 
 
@@ -6,19 +6,19 @@ Triangle::Triangle(int side1, int side2, int side3, int angle1, int angle2, int 
 
 	if ((side1 == 0) || (side2 == 0) || (side3 == 0)) {
 		std::string message;
-		message += std::string("Ошибка при создании фигуры: ") + show_name();
-		message += std::string("\nСтороны: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3);
-		message += std::string("\nУглы: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3);
-		message += std::string("\nПричина: количество сторон менее трёх. Программа будет завершена.");
+		message += std::string("РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё С„РёРіСѓСЂС‹: ") + show_name();
+		message += std::string("\nРЎС‚РѕСЂРѕРЅС‹: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3);
+		message += std::string("\nРЈРіР»С‹: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3);
+		message += std::string("\nРџСЂРёС‡РёРЅР°: РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ РјРµРЅРµРµ С‚СЂС‘С…. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°.");
 		throw wrong_figure(message);
 	}
 
 	if (!(angle1 + angle2 + angle3 == 180)) {
 		std::string message;
-		message = std::string("Ошибка при создании фигуры: ") + show_name();
-		message += std::string("\nСтороны: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3);
-		message += std::string("\nУглы: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3);
-		message += std::string("\nПричина: сумма углов не равна 180. Программа будет завершена.");
+		message = std::string("РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё С„РёРіСѓСЂС‹: ") + show_name();
+		message += std::string("\nРЎС‚РѕСЂРѕРЅС‹: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3);
+		message += std::string("\nРЈРіР»С‹: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3);
+		message += std::string("\nРџСЂРёС‡РёРЅР°: СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 180. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°.");
 		throw wrong_figure(message);
 	}
 
@@ -31,7 +31,7 @@ Triangle::Triangle(int side1, int side2, int side3, int angle1, int angle2, int 
 
 }
 
-Triangle::Triangle() : Triangle::Triangle(rand() % 100, rand() % 100, rand() % 100, 50, 30, 100, "Треугольник") {
+Triangle::Triangle() : Triangle::Triangle(rand() % 100, rand() % 100, rand() % 100, 50, 30, 100, "РўСЂРµСѓРіРѕР»СЊРЅРёРє") {
 }
 
 void Triangle::print_sides() {

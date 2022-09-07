@@ -1,11 +1,11 @@
-#include "Figures.h"
+п»ї#include "Figures.h"
 #include "wrong_figure.h"
 
 Figures::Figures(int sides, std::string name) {
-	if ((name == "Фигура") && (!(sides == 0))) {
+	if ((name == "Р¤РёРіСѓСЂР°") && (!(sides == 0))) {
 		std::string message;
-		message += std::string("Ошибка при создании фигуры: ") + name;
-		message += std::string("\nПричина: количество сторон больше нуля. Программа будет завершена.");
+		message += std::string("РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё С„РёРіСѓСЂС‹: ") + name;
+		message += std::string("\nРџСЂРёС‡РёРЅР°: РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ Р±РѕР»СЊС€Рµ РЅСѓР»СЏ. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°.");
 		throw wrong_figure(message);
 	}
 
@@ -13,7 +13,7 @@ Figures::Figures(int sides, std::string name) {
 	Figure = name;
 }
 
-Figures::Figures() : Figures::Figures(0, "Фигура") {
+Figures::Figures() : Figures::Figures(0, "Р¤РёРіСѓСЂР°") {
 }
 
 int Figures::show_sides() {

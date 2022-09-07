@@ -1,26 +1,26 @@
-#include "Isosceles.h"
+п»ї#include "Isosceles.h"
 #include "wrong_figure.h"
 
 Isosceles::Isosceles(int side1, int side2, int side3, int angle1, int angle2, int angle3, std::string name) : Triangle(side1, side2, side3, angle1, angle2, angle3, name) {
 	if (!(side1 == side3)) {
 		std::string message;
-		message += std::string("Ошибка при создании фигуры: ") + show_name();
-		message += std::string("\nСтороны: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3);
-		message += std::string("\nУглы: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3);
-		message += std::string("\nПричина: стороны а и с не равны. Программа будет завершена.");
+		message += std::string("РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё С„РёРіСѓСЂС‹: ") + show_name();
+		message += std::string("\nРЎС‚РѕСЂРѕРЅС‹: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3);
+		message += std::string("\nРЈРіР»С‹: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3);
+		message += std::string("\nРџСЂРёС‡РёРЅР°: СЃС‚РѕСЂРѕРЅС‹ Р° Рё СЃ РЅРµ СЂР°РІРЅС‹. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°.");
 		throw wrong_figure(message);
 	}
 
 	if (!(angle1 == angle3)) {
 		std::string message;
-		message += std::string("Ошибка при создании фигуры: ") + show_name();
-		message += std::string("\nСтороны: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3);
-		message += std::string("\nУглы: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3);
-		message += std::string("\nПричина: углы А и С не равны. Программа будет завершена.");
+		message += std::string("РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё С„РёРіСѓСЂС‹: ") + show_name();
+		message += std::string("\nРЎС‚РѕСЂРѕРЅС‹: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3);
+		message += std::string("\nРЈРіР»С‹: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3);
+		message += std::string("\nРџСЂРёС‡РёРЅР°: СѓРіР»С‹ Рђ Рё РЎ РЅРµ СЂР°РІРЅС‹. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°.");
 		throw wrong_figure(message);
 	}
 
 }
 
-Isosceles::Isosceles() : Isosceles::Isosceles(100, 20, 100, 40, 100, 40, "Равнобедренный треугольник") {
+Isosceles::Isosceles() : Isosceles::Isosceles(100, 20, 100, 40, 100, 40, "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє") {
 }

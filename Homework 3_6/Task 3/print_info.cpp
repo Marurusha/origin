@@ -1,11 +1,11 @@
-#include "print_info.h"
+ï»¿#include "print_info.h"
 #include "wrong_figure.h"
 
 void print_info(Figures* demo_figure) {
-	std::cout << "Óñïåøíîå ñîçäàíèå ôèãóðû: " << (*demo_figure).show_name() << "." << std::endl;
-	std::cout << "Ñòîðîíû: ";
+	std::cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾Ðµ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: " << (*demo_figure).show_name() << "." << std::endl;
+	std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: ";
 	(*demo_figure).print_sides();
-	std::cout << "Óãëû: ";
+	std::cout << "Ð£Ð³Ð»Ñ‹: ";
 	(*demo_figure).print_angles();
 	std::cout << std::endl;
 }

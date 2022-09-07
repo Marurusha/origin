@@ -1,23 +1,23 @@
-#include "Quadrangle.h"
+п»ї#include "Quadrangle.h"
 #include "wrong_figure.h"
 
 Quadrangle::Quadrangle(int side1, int side2, int side3, int side4, int angle1, int angle2, int angle3, int angle4, std::string name) : Figures(4, name) {
 
 	if ((side1 == 0) || (side2 == 0) || (side3 == 0) || (side4 == 0)) {
 		std::string message;
-		message += std::string("Ошибка при создании фигуры: ") + show_name();
-		message += std::string("\nСтороны: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3) + ", " + std::to_string(side4);
-		message += std::string("\nУглы: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3) + ", " + std::to_string(angle4);
-		message += std::string("\nПричина: количество сторон менее четырёх. Программа будет завершена.");
+		message += std::string("РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё С„РёРіСѓСЂС‹: ") + show_name();
+		message += std::string("\nРЎС‚РѕСЂРѕРЅС‹: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3) + ", " + std::to_string(side4);
+		message += std::string("\nРЈРіР»С‹: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3) + ", " + std::to_string(angle4);
+		message += std::string("\nРџСЂРёС‡РёРЅР°: РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ РјРµРЅРµРµ С‡РµС‚С‹СЂС‘С…. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°.");
 		throw wrong_figure(message);
 	}
 
 	if (!(angle1 + angle2 + angle3 + angle4 == 360)) {
 		std::string message;
-		message = std::string("Ошибка при создании фигуры: ") + show_name();
-		message += std::string("\nСтороны: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3) + ", " + std::to_string(side4);
-		message += std::string("\nУглы: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3) + ", " + std::to_string(angle4);
-		message += std::string("\nПричина: сумма углов не равна 360. Программа будет завершена.");
+		message = std::string("РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё С„РёРіСѓСЂС‹: ") + show_name();
+		message += std::string("\nРЎС‚РѕСЂРѕРЅС‹: ") + std::to_string(side1) + ", " + std::to_string(side2) + ", " + std::to_string(side3) + ", " + std::to_string(side4);
+		message += std::string("\nРЈРіР»С‹: ") + std::to_string(angle1) + ", " + std::to_string(angle2) + ", " + std::to_string(angle3) + ", " + std::to_string(angle4);
+		message += std::string("\nРџСЂРёС‡РёРЅР°: СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 360. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°.");
 		throw wrong_figure(message);
 	}
 
@@ -31,7 +31,7 @@ Quadrangle::Quadrangle(int side1, int side2, int side3, int side4, int angle1, i
 	D = angle4;
 }
 
-Quadrangle::Quadrangle() : Quadrangle::Quadrangle(rand() % 100, rand() % 100, rand() % 100, rand() % 100, 30, 30, 150, 150, "Четырёхугольник") {
+Quadrangle::Quadrangle() : Quadrangle::Quadrangle(rand() % 100, rand() % 100, rand() % 100, rand() % 100, 30, 30, 150, 150, "Р§РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРє") {
 }
 
 void Quadrangle::print_sides() {
