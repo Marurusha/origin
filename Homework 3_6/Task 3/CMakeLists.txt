@@ -1,0 +1,3 @@
+cmake_minimum_required(VERSION 3.20.0)
+project(task_2_from_L10)
+add_executable(figures_check Equilateral.cpp Equilateral.h Figures.cpp Figures.h Isosceles.cpp Isosceles.h Parallelogram.cpp Parallelogram.h print_info.cpp print_info.h Quadrangle.cpp Quadrangle.h Rectangle.cpp Rectangle.h Rhombus.cpp Rhombus.h Right_triangle.cpp Right_triangle.h Square.cpp Square.h Task3.cpp Triangle.cpp Triangle.h wrong_figure.cpp wrong_figure.h)
