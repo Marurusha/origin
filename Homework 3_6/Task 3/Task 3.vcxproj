@@ -137,7 +137,7 @@
     <ClCompile Include="Rhombus.cpp" />
     <ClCompile Include="Right_triangle.cpp" />
     <ClCompile Include="Square.cpp" />
-    <ClCompile Include="Task 3.cpp" />
+    <ClCompile Include="Task3.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="wrong_figure.cpp" />
   </ItemGroup>
