@@ -1,4 +1,4 @@
-#include "Greeter.h"
+п»ї#include "Greeter.h"
 
 Greeter::Greeter(std::string username) {
 	name = username;
@@ -6,6 +6,6 @@ Greeter::Greeter(std::string username) {
 
 std::string Greeter::greet() {
 	std::string hello;
-	hello = "Здравствуйте, " + name + "!\n";
+	hello = "Р—РґСЂР°РІСЃС‚РІСѓР№С‚Рµ, " + name + "!\n";
 	return hello;
 }
