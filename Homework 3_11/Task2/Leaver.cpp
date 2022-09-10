@@ -1,4 +1,4 @@
-#include "Leaver.h"
+п»ї#include "Leaver.h"
 
 namespace DynamicLeaver {
 	Leaver::Leaver(std::string username) {
@@ -7,7 +7,7 @@ namespace DynamicLeaver {
 
 	std::string Leaver::leave() {
 		std::string bye;
-		bye = "До свидания, " + name + "!\n";
+		bye = "Р”Рѕ СЃРІРёРґР°РЅРёСЏ, " + name + "!\n";
 		return bye;
 	}
 }

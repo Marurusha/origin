@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <Windows.h>
+
 #ifdef LEAVERLIBLIBRARYDYNAMIC_EXPORTS
 #define LEAVERLIBLIBRARY_API __declspec(dllexport)
 #else
