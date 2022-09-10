@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.20.0)
+project(Task_1)
+add_library(mylib STATIC Greeter.cpp Greeter.h)
+add_executable(Task_1EXE Task1.cpp)
+target_link_libraries(Task_1EXE mylib)
